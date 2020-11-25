@@ -13,7 +13,7 @@ inputs:
     default: ammo.txt
 runs:
   using: docker
-  image: direvius/yandex-tank
+  image: docker://direvius/yandex-tank
   args:
     - --config=${{ inputs.path }}/${{ inputs.config }}
     - ${{ inputs.path }}/${{ inputs.ammo }}
