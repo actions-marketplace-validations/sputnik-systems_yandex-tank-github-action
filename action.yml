@@ -1,0 +1,19 @@
+name: Yandex Tank Action
+description: Execute yandex tank as step in github actions ci
+author: preved911
+inputs:
+  path:
+    description: Path to tests specs.
+    default: .
+  config:
+    description: Config file location.
+    default: load.yaml
+  ammo:
+    description: Requests file location.
+    default: ammo.txt
+runs:
+  using: docker
+  image: direvius/yandex-tank
+  args:
+    - --config=${{ inputs.path }}/${{ inputs.config }}
+    - ${{ inputs.path }}/${{ inputs.ammo }}
